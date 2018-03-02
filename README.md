@@ -59,3 +59,9 @@ MIT
 ```package
 github:Microsoft/pxt-radio-blockchain
 ```
+
+## References
+
+* https://medium.com/@lhartikk/a-blockchain-in-200-lines-of-code-963cc1cc0e54
+* https://medium.com/crypto-currently/lets-build-the-tiniest-blockchain-e70965a248b
+* https://medium.com/@micheledaliessi/how-does-the-blockchain-work-98c8cd01d2ae
