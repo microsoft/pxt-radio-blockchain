@@ -56,10 +56,6 @@ MIT
 * for PXT/microbit
 (The metadata above is needed for package search.)
 
-```package
-github:Microsoft/pxt-radio-blockchain
-```
-
 ## References
 
 * https://medium.com/@lhartikk/a-blockchain-in-200-lines-of-code-963cc1cc0e54
