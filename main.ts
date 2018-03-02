@@ -5,6 +5,11 @@ enum BlockChainEvent {
     Broadcasted = 2,
 }
 
+/**
+ * A toy blockchain implementation on top of the radio
+ * 
+ */
+//% icon="\uf24d" color="#f7b825" weight=90
 namespace blockchain {
     const BLOCKCHAIN_EVENT = 14000;
 
@@ -294,7 +299,7 @@ namespace blockchain {
      * Attempts to add a block to the blockchain
      * @param value data to be store in the block
      */
-    //% blockId=radioblockadd block="add block %value"
+    //% blockId=radioblockadd block="add block %value|to blockchain"
     export function addBlock(value: number) {
         me.addCoin(value);
     }
@@ -302,7 +307,7 @@ namespace blockchain {
     /** 
      * Number of blocks in the chain minus the genesis (first) block
     */
-    //% blockId=radioblocklength block="length"
+    //% blockId=radioblocklength block="blockchain length"
     export function length(): number {
         return me.chain.length - 1;
     }
@@ -310,7 +315,7 @@ namespace blockchain {
     /**
      * Gets the values stored in the blockchain
      */
-    //% blockId=radioblockchain_data block="values"
+    //% blockId=radioblockchain_data block="blockchain values"
     export function values(): number[] {
         let m = me.chain.map(chain => chain.data);    
         m.shift();
@@ -321,7 +326,7 @@ namespace blockchain {
      * Gets the blocks that were inserted by a particular device
      * @param serialNumber serial number of the device
      */
-    //% blockId=radioblockvaluesfrom block="values from %serialNumber"
+    //% blockId=radioblockvaluesfrom block="blockchain values from %serialNumber"
     export function valuesFrom(serialNumber: number): number[] {
         return me.chain.filter(block => block.serialNumber == serialNumber)
             .map(chain => chain.data);
@@ -330,7 +335,7 @@ namespace blockchain {
     /**
      * Gets the serial numbers stored in each block the block chain
      */
-    //% blockId=radioblockchain_serialNumbers block="serial numbers"
+    //% blockId=radioblockchain_serialNumbers block="blockchain serial numbers"
     export function serialNumbers(): number[] {
         return me.chain.map(chain => chain.serialNumber);
     }
@@ -340,7 +345,7 @@ namespace blockchain {
      * @param event 
      * @param handler 
      */
-    //% blockId=radioblockchain_onevent block="on %event"
+    //% blockId=radioblockchain_onevent block="on blockchain %event"
     export function onEvent(event: BlockChainEvent, handler: () => void) {
         control.onEvent(BLOCKCHAIN_EVENT, event, handler);
     }
@@ -348,7 +353,7 @@ namespace blockchain {
     /**
      * Gets the serial number of this device
      */
-    //% blockId=radioblockchain_me block="id"
+    //% blockId=radioblockchain_me block="blockchain id"
     export function id(): number {
         return me.id;
     }
