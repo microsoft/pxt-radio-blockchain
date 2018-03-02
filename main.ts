@@ -9,7 +9,7 @@ enum BlockChainEvent {
  * A toy blockchain implementation on top of the radio
  * 
  */
-//% icon="\uf24d" color="#f7b825" weight=90
+//% icon="\uf24d" color="#cc0099" weight=90
 namespace blockchain {
     const BLOCKCHAIN_EVENT = 14000;
 
@@ -299,7 +299,7 @@ namespace blockchain {
      * Attempts to add a block to the blockchain
      * @param value data to be store in the block
      */
-    //% blockId=radioblockadd block="add block %value|to blockchain"
+    //% blockId=radioblockaddblock block="add block %value|to blockchain"
     export function addBlock(value: number) {
         me.addCoin(value);
     }
@@ -315,7 +315,7 @@ namespace blockchain {
     /**
      * Gets the values stored in the blockchain
      */
-    //% blockId=radioblockchain_data block="blockchain values"
+    //% blockId=radioblockchainvalues block="blockchain values"
     export function values(): number[] {
         let m = me.chain.map(chain => chain.data);    
         m.shift();
@@ -335,7 +335,7 @@ namespace blockchain {
     /**
      * Gets the serial numbers stored in each block the block chain
      */
-    //% blockId=radioblockchain_serialNumbers block="blockchain serial numbers"
+    //% blockId=radioblockchainserialNumbers block="blockchain serial numbers"
     export function serialNumbers(): number[] {
         return me.chain.map(chain => chain.serialNumber);
     }
@@ -345,7 +345,7 @@ namespace blockchain {
      * @param event 
      * @param handler 
      */
-    //% blockId=radioblockchain_onevent block="on blockchain %event"
+    //% blockId=radioblockchainonevent block="on blockchain %event"
     export function onEvent(event: BlockChainEvent, handler: () => void) {
         control.onEvent(BLOCKCHAIN_EVENT, event, handler);
     }
@@ -353,7 +353,7 @@ namespace blockchain {
     /**
      * Gets the serial number of this device
      */
-    //% blockId=radioblockchain_me block="blockchain id"
+    //% blockId=radioblockchainid block="blockchain id"
     export function id(): number {
         return me.id;
     }

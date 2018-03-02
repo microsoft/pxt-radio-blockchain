@@ -13,7 +13,7 @@ This is blockchain implementation is for educational purposes only.
 The library starts as soon as the @boardname@ starts.
 It uses the radio.
 
-### Add a block
+### Add a block #radioblockchainaddblock
 
 The ```addBlock``` adds a block in the blockchain and broadcast its to peers.
 
@@ -21,7 +21,7 @@ The ```addBlock``` adds a block in the blockchain and broadcast its to peers.
 blockchain.addBlock(0)
 ```
 
-### Read the values
+### Read the values #radioblockchainvalues
 
 Use the ``values`` block to get an array of number
 of the values stored in the chain, minus the genesis block.
@@ -30,6 +30,8 @@ of the values stored in the chain, minus the genesis block.
 blockchain.values()
 ```
 
+### Filtering values by @boardname@ #radioblockvaluesfrom
+
 You can also get the values contributed by a particular
 @boardname@ using ``valuesFrom``. The ``id`` block gives your @boardname@ id.
 
@@ -37,7 +39,7 @@ You can also get the values contributed by a particular
 blockchain.valuesFrom(blockchain.id())
 ```
 
-## Events
+## Events #radioblockchainonevent
 
 Events are raised when the chain is updated (when you received a new chain) or broadcasted.
 
