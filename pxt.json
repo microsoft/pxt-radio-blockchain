@@ -1,6 +1,6 @@
 {
     "name": "radio-blockchain",
-    "version": "0.1.2",
+    "version": "0.1.3",
     "description": "A toy blockchain over radio",
     "license": "MIT",
     "dependencies": {
