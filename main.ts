@@ -65,7 +65,7 @@ namespace blockchain {
                 let c = s.charCodeAt(i);
                 hash = ((hash << 5) + hash) + c; /* hash * 33 + c */
             }
-            return hash;
+            return hash & 0xff;
         }
 
         /**
