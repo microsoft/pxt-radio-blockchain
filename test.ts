@@ -19,12 +19,14 @@ input.onButtonPressed(Button.A, () => {
     led.stopAnimation()
     let score = blockchain.valuesFrom(blockchain.id()).length;
     basic.showNumber(score);
+    basic.showString("COINS");
 })
 
 // show the block chain size
 input.onButtonPressed(Button.B, () => {
     led.stopAnimation()
     basic.showNumber(blockchain.length());
+    basic.showString("BLOCKS");
 })
 
 // ask neighbors for chains
