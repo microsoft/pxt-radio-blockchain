@@ -140,7 +140,7 @@ namespace blockchain {
             // if ID is set, this coin is a mirror of a peer coin
             // otherwise add genesis block
             if (!this.id) {
-                this.chain.push(new Block(0, control.deviceSerialNumber(), 0, 0));
+                this.chain.push(new Block(0, 0, 0, 0));
                 this.id = control.deviceSerialNumber();
             }
         }
